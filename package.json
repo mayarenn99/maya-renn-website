@@ -1,0 +1,12 @@
+{
+  "name": "maya-renn-website",
+  "version": "1.0.0",
+  "description": "Personal website for Maya Renn — slow living, softly.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

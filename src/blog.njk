@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Journal
+description: Notes on slow living from Maya Renn — rituals, recipes, and soft interiors.
+permalink: /blog/
+---
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Journal</p>
+    <h1>Notes on living slowly</h1>
+    <p class="lede">Small essays on rituals, simple food, and rooms that breathe. New entries most Sundays.</p>
+  </header>
+
+  <ul class="post-list">
+    {% for post in collections.posts %}
+    <li>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <div>
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p>{{ post.data.description }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

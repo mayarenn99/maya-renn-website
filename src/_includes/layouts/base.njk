@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23A8798F'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='Georgia,serif' font-size='15' fill='%23FBF7F1'%3Em%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/">Maya Renn</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+      <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+      <a href="/blog/" {% if "/blog" in page.url or "/posts/" in page.url %}aria-current="page"{% endif %}>Journal</a>
+      <a href="/links/" {% if page.url == "/links/" %}aria-current="page"{% endif %}>Links</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-mark">Maya Renn <span aria-hidden="true">·</span> <em>{{ site.tagline }}</em></p>
+      <nav class="footer-social" aria-label="Social">
+        <a href="{{ site.instagram }}">Instagram</a>
+        <a href="{{ site.pinterest }}">Pinterest</a>
+        <a href="{{ site.tiktok }}">TikTok</a>
+        <a href="{{ site.substack }}">Substack</a>
+      </nav>
+      <p class="footer-note">Maya is a virtual creator — lovingly made with AI, and honest about it.</p>
+    </div>
+  </footer>
+</body>
+</html>
